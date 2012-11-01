@@ -1,7 +1,7 @@
 Currencyconversion::Application.routes.draw do
 
   resources :publics
-  root :to => "public#index"
+  root :to => "publics#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
