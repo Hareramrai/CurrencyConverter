@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Currencyconversion with flra</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <link href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css" />
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+ <div id="wrapper">
+            <div id="header">
+                <div id="logo">
+                    <h1><a href="#">Currency Converter with FLRA</a></h1>
+                    <p>Go for it</p>
+                </div>
+            </div>
+            <!-- end #header -->
+            <div id="menu">
+                <ul>
+                    <li class="current_page_item"><a href="#">Home</a></li>
+                    <li><a href="https://github.com/Hareramrai/CurrencyConverter">GitHub</a></li>
+                    <li><a href="#">About</a></li>
+                    <li class="last"><a href="http://in.linkedin.com/in/hareramrai">Contact</a></li>
+                </ul>
+            </div>
+            <div id="banner"><img src="images/pics01.jpg" width="1000" height="361" alt="" /></div>
+<%= yield %>
+  <div id="footer">
+            <p>Copyright (c) 2012 localhost.com. All rights reserved. Design by <a href="#">unknown</a>.</p>
+        </div>
+        <!-- end #footer -->
+</body>
+</html>
+
