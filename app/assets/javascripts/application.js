@@ -100,8 +100,8 @@ $(document).ready(function(){
         $("#calculate_flra").live("click",calculateFLRA);
         fromAmount.val("");
         toAmount.val("");
-        fromCurrency.val("");
-        toCurrency.val("");
+        fromCurrency.val("USD");
+        toCurrency.val("INR");
         increment.val("");
         flraAmount.val("");
         flarDiv.hide();
