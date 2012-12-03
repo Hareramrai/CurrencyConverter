@@ -14,6 +14,7 @@ end
 
 
 gem "twitter-bootstrap-rails"
+gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -23,7 +24,7 @@ group :assets do
   
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', :platforms => :ruby
-  gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+ 
   gem 'uglifier', '>= 1.0.3'
 end
 
@@ -42,5 +43,5 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 # To use debugger
- gem 'debugger'
+# gem 'debugger'
 
