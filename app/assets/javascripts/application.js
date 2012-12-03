@@ -12,9 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require_tree .
 
 $(document).ready(function(){
+    
     var rate = 0.0;
     var fromCurrency = $("#from_currency");
     var toCurrency= $("#to_currency");
@@ -25,15 +27,43 @@ $(document).ready(function(){
     var increment = $("#increment");
     var flraAmount = $("#flra_amount");
     var flarDiv = $("#flra_div");
+    var message = $("#convertion_rate_message");
+
+
+    /*
+     * purpose : for updating error field , flra div
+     * params : none
+     * return : none
+     **/
 
     var fromCurrencyChanged = function(){
+        
         fromCurrencyError.html("&nbsp;");
+        flarDiv.hide();
+        message.html("&nbsp;")
     };
-
+    
+    
+    /*
+     * purpose : for updating error field , flra div
+     * params : none
+     * return : none
+     **/
     var toCurrencyChanged = function(){
+        
         toCurrencyError.html("&nbsp;");
+        flarDiv.hide();
+        message.html("&nbsp;")
+        
     };
 
+
+
+    /*
+     * purpose : for call controller create action using ajax 
+     * params : none
+     * return : none
+     **/
     var getConversionRate = function(){
 
         fromCurrencyChanged();
@@ -73,26 +103,46 @@ $(document).ready(function(){
             else{
                 flarDiv.hide();
             }
+        
+            
+            message.html("<div class=\"alert alert-success\">"+
+                "<button type=\"button\" class=\"close\" data-dismiss=\"alert\">×</button>"+
+                "<b>Successfully Calculated Convertion Rate!</b>"+
+                "       1  "+fromCurrency.val()+ " = "+rate +"  "+toCurrency.val()+"</div>")
         }
         );
 
     };
+    
+    /*
+     * purpose : for calculating flra
+     * params : none
+     * return : none
+     **/
     var calculateFLRA = function(){
+        
         var dollar;
+        
         if(rate > 1){
 
             dollar= Math.ceil(rate);
+            
         }
         else{
 
             dollar = Math.ceil(1 / rate);
-        }
-        console.log(dollar);
+            
+        }       
+        
         var flr = (dollar - 48)/5 * increment.val();
+        
         flraAmount.val(flr);
 
     };
-
+    
+    /*
+     * purpose : for initializing the fields and callbacks
+     **/
     var initializer = function(){
         $("#get_conversion_rate").click(getConversionRate);
         fromCurrency.change(fromCurrencyChanged);
@@ -106,14 +156,14 @@ $(document).ready(function(){
         flraAmount.val("");
         flarDiv.hide();
         $('#loading_div')
-            .hide()  // hide it initially
-            .ajaxStart(function() {
-                    $(this).show();
-                })
-            .ajaxStop(function() {
-                    $(this).hide();
-                })
-            ;
+        .hide()  // hide it initially
+        .ajaxStart(function() {
+            $(this).show();
+        })
+        .ajaxStop(function() {
+            $(this).hide();
+        })
+    ;
 
     };
 
@@ -122,18 +172,35 @@ $(document).ready(function(){
 
 });
 
+
+/*
+ * purpose : for checking blank 
+ * params : string
+ * return : boolean
+ **/
 function isBlank(string){
+    
     if (!string || string.length == 0) {
+        
         return true;
+        
     }
+    
     return !/[^\s]+/.test(string);
 }
 
+/*
+* purpose : for checking decimal
+* params : number
+* return : boolean
+**/
 
 function isDecimal(number)
 {
     //var decimal=  /^[0-9]+(\.[0-9]+)+$/;
+    
     var integer = /^[0-9]+$/;
+    
     if(number.match(integer)) {
 
         return true;

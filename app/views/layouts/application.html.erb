@@ -1,34 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Currencyconversion with flra</title>
-    <%= stylesheet_link_tag    "application", :media => "all" %>
-    <link href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css" />
-    <%= javascript_include_tag "application" %>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Currencyconversion" %></title>
     <%= csrf_meta_tags %>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+
+    <%= stylesheet_link_tag "application", :media => "all" %>
+
+    <!-- For third-generation iPad with high-resolution Retina display: -->
+    <!-- Size should be 144 x 144 pixels -->
+    <%= favicon_link_tag 'images/apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
+
+    <!-- For iPhone with high-resolution Retina display: -->
+    <!-- Size should be 114 x 114 pixels -->
+    <%= favicon_link_tag 'images/apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114' %>
+
+    <!-- For first- and second-generation iPad: -->
+    <!-- Size should be 72 x 72 pixels -->
+    <%= favicon_link_tag 'images/apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72' %>
+
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <!-- Size should be 57 x 57 pixels -->
+    <%= favicon_link_tag 'images/apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
+
+    <!-- For all other devices -->
+    <!-- Size should be 32 x 32 pixels -->
+    <%= favicon_link_tag 'images/favicon.ico', :rel => 'shortcut icon' %>
+    <link href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <div id="wrapper">
-      <div id="header">
-        <div id="logo">
-          <h1><a href="#">Currency Converter with FLRA</a></h1>
-          <p>Go for it</p>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Currencyconversion</a>
+          <div class="container nav-collapse">
+            <ul class="nav">
+              <li class="current_page_item active"><a href="#">Home</a></li>
+              <li><a href="https://github.com/Hareramrai/CurrencyConverter">GitHub</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact Us</a></li>              
+            </ul>
+          </div><!--/.nav-collapse -->
         </div>
       </div>
-      <!-- end #header -->
-      <div id="menu">
-        <ul>
-          <li class="current_page_item"><a href="#">Home</a></li>
-          <li><a href="https://github.com/Hareramrai/CurrencyConverter">GitHub</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact Us</a></li>
-        </ul>
-      </div>
-      <%= yield %>
-      <div id="footer">
-        <p>A sample application to show how to use savon in ruby on rails</p>          
-      </div>
-      <!-- end #footer -->
-  </body>
-</html>
+    </div>
 
+    <div class="container">
+      
+      <div id="logo">
+          <h1><a href="#">Currency Converter with FLRA</a></h1>
+          <p>Go for it</p>
+      </div>
+      
+      <%= yield %>
+
+    </div><!--/row-->
+
+    <footer>
+      <p>A sample application to show how to use savon in ruby on rails </p>
+    </footer>
+
+  </div> <!-- /container -->
+
+  <!-- Javascripts
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <%= javascript_include_tag "application" %>
+
+</body>
+</html>

@@ -15,8 +15,10 @@ class PublicsController < ApplicationController
   # params : params[:fromCurrency],params[:toCurrency]
   # return :  convertion rate
   def create
+    
     currency = CurrencyConverter.new(params[:fromCurrency],params[:toCurrency])
     render :json => currency.result
+    
   end
 
 end
