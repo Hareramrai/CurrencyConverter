@@ -2,16 +2,16 @@
 @import "twitter/bootstrap/responsive";
 
 // Set the correct sprite paths
-@iconSpritePath: asset-path("twitter/bootstrap/glyphicons-halflings");
-@iconWhiteSpritePath: asset-path("twitter/bootstrap/glyphicons-halflings-white");
+@iconSpritePath: asset-path("twitter/bootstrap/glyphicons-halflings.png");
+@iconWhiteSpritePath: asset-path("twitter/bootstrap/glyphicons-halflings-white.png");
 
 // Set the Font Awesome (Font Awesome is default. You can disable by commenting below lines)
-// Note: If you use asset_path() here, your compiled boostrap_and_overrides.css will not
+// Note: If you use asset_path() here, your compiled bootstrap_and_overrides.css will not
 //       have the proper paths. So for now we use the absolute path.
-@fontAwesomeEotPath: asset-path("fontawesome-webfont.eot");
-@fontAwesomeWoffPath: asset-path("fontawesome-webfont.woff");
-@fontAwesomeTtfPath: asset-path("fontawesome-webfont.ttf");
-@fontAwesomeSvgPath: asset-path("fontawesome-webfont.svg");
+@fontAwesomeEotPath: asset-path("fontawesome-webfont.eot?v=3.0.2");
+@fontAwesomeEotPath_iefix: asset-path("fontawesome-webfont.eot?#iefix&v=3.0.2");
+@fontAwesomeWoffPath: asset-path("fontawesome-webfont.woff?v=3.0.2");
+@fontAwesomeTtfPath: asset-path("fontawesome-webfont.ttf?v=3.0.2");
 
 // Font Awesome
 @import "fontawesome";
@@ -31,28 +31,27 @@
 // @linkColor: #ff0000;
 
 
-
 footer {
         
-	height: 60px;
-	clear:both;
+height: 60px;
+clear:both;
         background:#080202;
-        display: block;  
+        display: block;
         width: 100%;
         padding-top: 20px;
         text-align: center;
         /*Opacity*/
-	filter:alpha(opacity=50); /* msie */  
-	-moz-opacity: 0.50; /* firefox 1.0 */  
-	-khtml-opacity: 0.50; /* webkit */  
-	opacity: 0.50; /* css 3 */
+filter:alpha(opacity=50); /* msie */
+-moz-opacity: 0.50; /* firefox 1.0 */
+-khtml-opacity: 0.50; /* webkit */
+opacity: 0.50; /* css 3 */
         color: white;
-	/*Round corners*/
-	-moz-border-radius: 12px; /* FF1+ */
-	-webkit-border-radius: 12px; /* Saf3+, Chrome */
-	border-radius: 12px; /* Opera 10.5, IE 9 */
+/*Round corners*/
+-moz-border-radius: 12px; /* FF1+ */
+-webkit-border-radius: 12px; /* Saf3+, Chrome */
+border-radius: 12px; /* Opera 10.5, IE 9 */
 
-} 
+}
 
 
 body {	
@@ -91,3 +90,6 @@ body {
     float: right;
     padding-right: 100px;
 }
+
+
+

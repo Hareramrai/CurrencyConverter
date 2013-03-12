@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
-//= require_tree .
+
 
 $(document).ready(function(){
     
@@ -147,7 +147,7 @@ $(document).ready(function(){
         $("#get_conversion_rate").click(getConversionRate);
         fromCurrency.change(fromCurrencyChanged);
         toCurrency.change(toCurrencyChanged);
-        $("#calculate_flra").live("click",calculateFLRA);
+        $("#calculate_flra").on("click",calculateFLRA);
         fromAmount.val("");
         toAmount.val("");
         fromCurrency.val("USD");

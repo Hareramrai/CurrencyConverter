@@ -3,14 +3,14 @@ require 'rvm/capistrano'
 set :rvm_type, :user
 
 set :application, "192.168.9.247"
-set :repository,  "git@github.com:Hareramrai/CurrencyConverter.git"
+set :repository,  "git://github.com/Hareramrai/CurrencyConverter.git"
 set :scm, :git 
 set :scm_username, "hareramrai"
 set :branch, "master"
 set :git_enable_submodules, 1
 set :rails_env, "production"
 default_environment["RAILS_ENV"] = 'production'
-set :rake , "/usr/bin/env/rake"
+#set :rake , "/usr/bin/env/rake"
 set :deploy_to, "/var/www/192.168.9.247"
 set :deploy_via, :remote_cache
 set :user, "hareror"
