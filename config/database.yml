@@ -21,8 +21,10 @@ test:
   timeout: 5000
 
 production:
-  adapter: postgresql
+  adapter: mysql
   database: currencyconvertor
+  user: root
+  password: mindfire
   pool: 5
   timeout: 5000
 

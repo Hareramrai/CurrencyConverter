@@ -1,7 +1,6 @@
-$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
 require 'rvm/capistrano'
 #set :rvm_ruby_string, 'ruby-1.9.2-p290'
-#set :rvm_type, :user
+set :rvm_type, :user
 
 set :application, "192.168.9.247"
 set :repository,  "git@github.com:Hareramrai/CurrencyConverter.git"
